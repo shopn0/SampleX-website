@@ -1,0 +1,689 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif, sans-serif;
+    background: linear-gradient(45deg, #3A6D8C, #00152b);
+    background-size: 400% 400%;
+    animation: gradientAnimation 10s ease infinite;
+}
+
+header {
+    background-color: #333;
+    padding: 10px 0;
+}
+
+.navbar {
+    position: fixed; /* Keeps the navbar fixed on scroll */
+    top: 0;
+    left: 0;
+    height: 45px;
+    width: 100%; /* Full width navbar */
+    background-color: rgba(0, 0, 0, 0.9); /* Semi-transparent black background */
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000; /* Ensures navbar is on top of other content */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 1); /* Optional: slight shadow */
+}
+.navbar .logo a {
+    text-decoration: none; /* Remove the underline */
+}
+
+
+/* SampleX text (logo) on the left */
+.logo h2 {
+    font-family: 'Tiny5', sans-serif; /* Apply the custom font */
+    font-size: 2rem;
+    color: white;
+    margin: 0; /* Remove default margin */
+    
+}
+
+/* Navigation links aligned to the right */
+.nav-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #bbff00;
+    font-size: 1rem;
+    padding: 10px 15px;
+    transition: background-color 0.3s;
+}
+
+/* Hover effect for navigation links */
+.nav-links a:hover {
+    background-color: #bbff00;
+    color: rgb(0, 0, 0);
+    border-radius: 5px;
+}
+
+/* Ensure content doesn't hide behind fixed navbar */
+.section {
+    padding-top: 80px; /* Adjust depending on navbar height */
+}
+
+.section {
+    color: white;
+    padding: 50px 20px;
+    min-height: 100vh;
+}
+
+.home {
+    
+    color: white;
+    text-align: center;
+    
+}
+
+.home h1 {
+    font-size: 9rem;
+    font-family: 'Tiny5', sans-serif; /* Ensure custom font is applied */
+    color: white; /* Text color */
+    padding-left: 0.9%;
+    padding-top: 0%;
+    padding-bottom: 0%;
+    border: 10px solid white; /* White border */
+    display: inline-block; /* Keeps it within the border */
+    text-align: center; /* Center text inside the square */
+    position:relative; /* Allows animation and positioning */
+    
+}
+
+
+.home p {
+    font-size: 31%;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    
+    margin-top: 20px;
+}
+
+.home-section {
+    display: flex;
+    justify-content: space-between; /* Space between text and icons */
+    align-items: center; /* Align vertically */
+    padding: 20px;
+}
+
+.text-container {
+    max-width: 1500px; /* Adjust width of the text area */
+    padding-left: 7%;
+    font-size: 60px;
+    text-align: justify;
+    
+}
+
+.social-icons {
+    padding-right: 8%;
+    display: flex;
+    gap: 20px; /* Adds space between the icons */
+}
+
+.social-link {
+    display: inline-block;
+}
+
+.social-icon {
+    width: 40px;
+    height: 40px;
+    transition: transform 0.3s ease;
+}
+
+.social-icon:hover {
+    transform: scale(1.2); /* Enlarges the icon slightly on hover */
+}
+
+
+
+.typing-container {
+    font-size: 4rem;
+    color: white;
+    
+    margin-top: 100px; /* Space between the heading and the typing effect */
+    margin-left: 150px;
+    padding-bottom: 15px;
+    text-align: left;
+    font-family: Verdana, sans-serif; /* Custom font */
+}
+
+.typing-text {
+    font-weight: bold;
+    color: #bbff00; /* Different color for the animated text */
+    border-right: 2px solid #bbff00; /* Blinking cursor */
+    animation: blink 0.7s step-end infinite;
+}
+
+
+.card-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: 40px; 
+    justify-content: center; 
+    width: 100%; 
+    max-width: 1200px; 
+    margin: 0 auto; 
+    padding: 40px 20px; 
+}
+.card-container a {
+    text-decoration: none; /* Remove the underline */
+    color: inherit; /* Ensure the text color inherits the card text color */
+}
+
+.card {
+    background-color: #000000;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    border: 1px solid transparent;
+    width: 100%;
+    /* Existing card styling */
+    display: block;
+}
+
+
+.card:hover {
+    transform: translateY(-10px); 
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); 
+    border: 1.5px solid #bbff00;
+    color: #bbff00;
+}
+
+
+.card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+
+.card p {
+    font-size: 1rem;
+    color: #666;
+}
+
+/* Service section styling to make sure it occupies most of the space */
+.services {
+    
+    min-height: 100vh; /* Make the section take up most of the screen height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 20px;
+}
+
+
+
+.services h2 {
+    font-size: 5rem ;
+    font-family: 'Tiny5';
+    text-align: center;
+    margin-left: 3rem;
+    margin-bottom: 20px;
+    animation: fadeIn 1.5s ease;
+}
+
+
+.icon-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+/* Styling each icon */
+.icon-item {
+    text-align: center;
+    padding: 20px;
+    transition: transform 0.3s ease;
+    width: 220px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none; /* Remove underline for links */
+}
+
+/* Size of icons */
+.icon-item img {
+    width: 200px; /* Adjusted icon size */
+    height: 200px;
+    object-fit: contain;
+}
+
+/* Hover effect for icons */
+.icon-item:hover {
+    transform: scale(1.1);
+}
+
+/* Text under icons */
+.icon-item p {
+    margin-top: 10px;
+    font-size: 1rem;
+    color: white;
+    text-align: center; /* Center the text */
+    width: 100%; /* Ensure full width for text alignment */
+}
+
+
+
+.service-list {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.service {
+    width: 45%;
+    background-color: #f0f0f0;
+    margin: 10px 0;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+    animation: slideIn 1.5s ease;
+}
+
+.service:hover {
+    transform: translateY(-10px);
+    
+}
+
+/* Team Section */
+.team {
+    text-align: center;
+    color: white;
+    padding: 60px 20px;
+}
+
+.team h2 {
+    font-size: 5rem;
+    font-family: 'Tiny5';
+    margin-bottom: 20px;
+    animation: fadeIn 1.5s ease;
+}
+
+/* Team Container to align cards */
+.team-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 70px;
+}
+
+/* Team Cards */
+.team-card {
+    background-color: #333;
+    color: white;
+    width: 220px;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeUp 1s ease forwards;
+}
+
+/* Delays for each card animation */
+.team-card:nth-child(1) { animation-delay: 0.2s; }
+.team-card:nth-child(2) { animation-delay: 0.4s; }
+.team-card:nth-child(3) { animation-delay: 0.6s; }
+.team-card:nth-child(4) { animation-delay: 0.8s; }
+.team-card:nth-child(5) { animation-delay: 1s; }
+
+.team-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    object-fit: cover;
+}
+.team-card {
+    transition: background-color 0.5s ease, transform 0.3s ease, box-shadow 0.3s ease, color 0.5s ease;
+}
+
+/* Hover effect for team cards */
+.team-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    color: #bbff00;
+    background-color: #000000;
+}
+
+#join-card{
+    cursor: pointer;
+    
+}
+#fix{
+    text-decoration: none;
+}
+#join-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    color: #bbff00;
+    background-color: #000000;
+    transition: background-color 0.5s ease, transform 0.3s ease, box-shadow 0.3s ease, color 0.5s ease;
+}
+
+
+
+.plus-symbol {
+    font-size: 80px;
+    font-weight: bold;
+    color: #555; /* Adjust color as desired */
+    margin-bottom: 10px;
+    transition: color 0.5s ease;
+}
+
+.team-card:hover .plus-symbol {
+    color: #bbff00; /* Matches hover color */
+}
+
+#our-des{
+    margin-top: 70px;
+    font-size: 17px;
+}
+
+/* Fade Up Animation */
+@keyframes fadeUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+.about {
+    
+    color: white;
+    text-align: center;
+}
+
+.about h2{
+    font-family: 'Tiny5';
+    font-size: 5rem;
+}
+.contact-form {
+    background-color: #f9f9f9;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 800px; /* You can adjust this width for a larger form */
+    margin: 50px auto; /* This centers the form */
+    text-align: center;
+}
+
+.contact-form h2 {
+    font-size: 5rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.contact-form p {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+/* Style the iframe */
+.contact-form iframe {
+    width: 100%;
+    height: 700px; /* You can adjust this height if needed */
+    border: none;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+/* Optional: Apply some padding for better spacing */
+.contact-form iframe {
+    padding: 20px;
+}
+
+.contact-form input[type="text"], 
+.contact-form input[type="email"], 
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.contact-form input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 20px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.contact-form input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+  
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(30px);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes blink {
+    50% {
+        border-color: transparent;
+    }
+}
+
+
+/* Base Styles (already defined in your code) */
+:root {
+    --main-font: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    --highlight-color: #bbff00;
+    --background-dark: #333;
+    --text-light: white;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    /* General Adjustments */
+    body {
+        font-size: 90%; /* Reduce overall font size slightly */
+    }
+
+    .navbar {
+        padding: 10px 15px;
+    }
+
+    .navbar .logo h2 {
+        font-size: 1.5rem; /* Adjust logo font size */
+    }
+
+    .nav-links {
+        display:contents; /* Hide navbar links for a simpler layout */
+    }
+
+    /* Collapsible Menu Icon for Mobile */
+    .menu-icon {
+        display: inline-block;
+        font-size: 2rem;
+        color: var(--highlight-color);
+    }
+
+    /* Home Section Adjustments */
+    .home h1 {
+        font-size: 5rem; /* Scale down main heading */
+        padding-left: 3%;
+        padding-right: 1%;
+        padding-top: 0%;
+        padding-bottom: 0%;
+        border: 5px solid white; /* White border */
+        display: inline-block; /* Keeps it within the border */
+        text-align: center; /* Center text inside the square */
+        position:relative; /* Thinner border */
+    }
+
+   
+
+    .home p {
+        font-size: 1.2rem; /* Reduce paragraph text */
+    }
+
+    /* Text and Social Icons */
+    .home-section {
+        flex-direction: column; /* Stack text and social icons */
+        text-align: center; /* Center-align content */
+    }
+
+    .typing-container {
+        padding-top: 10px;
+        padding-left: 30px;
+        font-size: 20px;
+        text-align: left; /* Align text to the left */
+        margin: 0 auto; /* Center the container itself on the page */
+        max-width: 100%; /* Optional: Adjust container width if needed */
+    }
+
+    .text-container {
+        font-size: 1rem;
+        padding: 0 10px;
+    }
+
+    .social-icons {
+        padding-top: 40px;
+        padding-left: 40px;
+        gap: 10px;
+        align-self: center;
+    }
+
+    /* Cards (Grid Adjustments) */
+    .card-container {
+        grid-template-columns: 1fr; /* Single column layout */
+    }
+
+    .card h3 {
+        font-size: 1.2rem;
+    }
+
+    .card p {
+        font-size: 0.9rem;
+    }
+
+    /* Services Section */
+    .services h2 {
+        font-size: 2.5rem; /* Scale down section heading */
+        margin-left: 0;
+    }
+
+    .icon-container {
+        flex-direction: column; /* Stack icons vertically */
+        gap: 15px;
+    }
+
+    .icon-item {
+        width: 100%; /* Full width for each icon */
+    }
+
+    .icon-item img {
+        width: 150px;
+        height: 150px;
+    }
+
+    /* Team Section */
+    .team h2 {
+        font-size: 3rem;
+    }
+
+    .team-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .team-card {
+        width: 80%; /* Smaller card width */
+    }
+
+    /* About Section */
+    .about h2 {
+        font-size: 2.5rem;
+    }
+
+    /* Contact Form */
+    .contact-form {
+        padding: 20px;
+        width: 90%;
+        margin: 20px auto;
+    }
+
+    .contact-form h2 {
+        font-size: 2.5rem;
+    }
+
+    .contact-form p {
+        font-size: 1rem;
+    }
+
+    /* Footer */
+    footer {
+        font-size: 0.9rem;
+    }
+}
